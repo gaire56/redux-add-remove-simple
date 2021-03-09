@@ -53,7 +53,7 @@
   float: left;
   /* display: inline-block; */
   width: 120px;
-  padding: 20px;
+  padding: 14px;
 }
 
 .add-to-cart img {
@@ -61,6 +61,24 @@
   position: absolute;
   right: 1%;
   top: 1%;
+}
+
+.card-count {
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  z-index: 1;
+  background-color: green;
+  padding: 7px;
+  width: 25px;
+  height: 20px;
+  border-radius: 50%;
+  color: #fff;
+}
+
+button.remove-cart-btn {
+  background-color: red;
+  margin-top: 8px;
 }
 
 @keyframes App-logo-spin {

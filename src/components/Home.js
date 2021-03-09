@@ -1,14 +1,9 @@
 import React from 'react';
 
-const Home = () => {
+const Home = (props) => {
+  console.log('props', props);
   return (
     <div>
-      <div className="add-to-cart">
-        <img
-          src="https://www.mangoextensions.com/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/a/j/ajaxaddtocartsite.jpg"
-          alt="add to card img"
-        />
-      </div>
       <div className="cart-wrapper">
         <div className="img-wrapper item">
           <img
@@ -21,7 +16,19 @@ const Home = () => {
           <span>Price: $1200.00</span>
         </div>
         <div className="btn-wrapper item">
-          <button>Add to Cart</button>
+          <button
+            onClick={() =>
+              props.addToCartHandler({ price: 1000, name: 'iPhone 12' })
+            }
+          >
+            Add to Cart
+          </button>
+          <button
+            className="remove-cart-btn"
+            onClick={() => props.removeToCartHandler()}
+          >
+            Remove to Cart
+          </button>
         </div>
       </div>
     </div>

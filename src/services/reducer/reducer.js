@@ -1,18 +1,18 @@
-import { ADD_TO_CART } from '../Constant';
+import { ADD_TO_CART, REMOVE_TO_CART } from '../Constant';
 
 const initialState = {
   cardData: [],
 };
 
-export default function cardItems(initialState, action) {
+export default function cardItems(state = [], action) {
   // eslint-disable-next-line default-case
   switch (action.type) {
-    case 'ADD_TO_CART':
-      return {
-        ...state,
-        cardData: action.data,
-      };
-      break;
+    case ADD_TO_CART:
+      return [...state, { cardData: action.data }];
+    case REMOVE_TO_CART:
+      state.pop();
+      return [...state];
+
     default:
       return state;
   }
